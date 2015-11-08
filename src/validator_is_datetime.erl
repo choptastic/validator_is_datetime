@@ -22,7 +22,7 @@ render_action(R = #is_datetime{}) ->
 		attach_to=AttachTo
 	}).
 
-validate(Rec, Value) ->
+validate(_Rec, Value) ->
 	%% If qdate crashes when parsing, then this is not a valid date or time, so
 	%% return false.
 	try qdate:to_unixtime(Value) of
