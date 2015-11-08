@@ -1,0 +1,1 @@
+-record(is_datetime, {?VALIDATOR_BASE(validator_is_datetime)}).

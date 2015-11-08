@@ -1,0 +1,12 @@
+%% vim ts=2 sw=2 et ft=erlang
+{application, validator_is_datetime,
+ [
+  {description, "A simple Date/Time validator for Nitrogen"},
+  {vsn, "0.0.1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {env, []}
+ ]}.
