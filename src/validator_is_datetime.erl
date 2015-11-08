@@ -9,7 +9,6 @@
 
 -spec render_action(#is_datetime{}) -> script().
 render_action(R = #is_datetime{}) ->
-	IsTrue = is_true(R#yesno.value),
 	TriggerPath = R#is_datetime.trigger,
 	TargetPath = R#is_datetime.target,
 	AttachTo = R#is_datetime.attach_to,
