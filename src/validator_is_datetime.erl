@@ -16,12 +16,17 @@ render_action(R = #is_datetime{}) ->
 	validator_custom:render_action(#custom{
 		trigger=TriggerPath,
 		target=TargetPath,
-		function=fun validate/2,
+		function=fun ?MODULE:validate/2,
 		text=Text,
 		tag=R,
 		attach_to=AttachTo
 	}).
 
+
+validate(_Req, "") ->
+	%% blank is an acceptable format, since if we wanted to require it, they
+	%% could attach a #is_required{} validator
+	true; 
 validate(_Rec, Value) ->
 	%% If qdate crashes when parsing, then this is not a valid date or time, so
 	%% return false.
